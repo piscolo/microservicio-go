@@ -13,9 +13,19 @@ func saludoHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, `{"mensaje2": "Así queda mejor??"}`)
 }
 
+// Manejador para la ruta /despedirse
+func adiosHandler(w http.ResponseWriter, r *http.Request) {
+	//responder con otro mensaje JSON
+	w.Header().Set("Content-Type", "application/json")
+	fmt.Println(w, `{"mensaje3": "Adios!"}`)
+}
+
 func main() {
 	// Asignar la función al endpoint /saludo
 	http.HandleFunc("/saludo", saludoHandler)
+
+	// Asignar la otra función al endpoint /adios
+	http.HandleFunc("/adios", adiosHandler)
 
 	// Iniciar el servidor en el puerto 8080
 	fmt.Println("Servidor ejecutándose en http://localhost:8080")
