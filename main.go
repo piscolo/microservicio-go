@@ -10,14 +10,13 @@ func saludoHandler(w http.ResponseWriter, r *http.Request) {
 	// Responder con un mensaje en formato JSON
 	w.Header().Set("Content-Type", "application/json")
 	fmt.Fprintf(w, `{"mensaje": "¡Hola, bienvenido al microservicio en Go!"}`)
-	fmt.Fprintf(w, `{"mensaje2": "Así queda mejor??"}`)
 }
 
 // Manejador para la ruta /despedirse
 func adiosHandler(w http.ResponseWriter, r *http.Request) {
 	//responder con otro mensaje JSON
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Println(w, `{"mensaje3": "Adios!"}`)
+	fmt.Fprintf(w, `{"mensaje3": "Adios!"}`)
 }
 
 func main() {
