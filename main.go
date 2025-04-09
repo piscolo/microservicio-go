@@ -16,7 +16,7 @@ func saludoHandler(w http.ResponseWriter, r *http.Request) {
 func adiosHandler(w http.ResponseWriter, r *http.Request) {
 	//responder con otro mensaje JSON
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprintf(w, `{"mensaje3": "Adios!"}`)
+	fmt.Fprintf(w, `{"mensaje2": "Adios!"}`)
 }
 
 func main() {
